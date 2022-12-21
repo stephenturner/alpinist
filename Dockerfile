@@ -1,7 +1,8 @@
 ARG VERSION_ALPINE=3.17
 FROM alpine:${VERSION_ALPINE}
 
-RUN apk update && apk add --no-cache wget gcc g++ make R R-dev R-doc libc-dev ncurses-dev zlib-dev xz-dev bzip2-dev libxml2-dev tzdata bash
+RUN apk update && apk add --no-cache wget gcc g++ make R R-dev R-doc libc-dev ncurses-dev zlib-dev xz-dev bzip2-dev libxml2-dev tzdata bash ttf-opensans fontconfig
+RUN mkdir -p /.cache && chmod 777 /.cache
 
 RUN Rscript -e 'install.packages(c("tibble", "dplyr", "readr", "tidyr", "purrr", "stringr", "ggplot2", "kgp"), repos="https://cloud.r-project.org")'
 

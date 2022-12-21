@@ -22,6 +22,12 @@ Pull from Docker Hub or build locally:
 ```sh
 # Pull from docker hub
 docker pull stephenturner/alpinist && docker tag stephenturner/alpinist alpinist
+
 # Build locally
 docker build --no-cache --tag alpinist .
+
+# Tag and push
+# docker tag alpinist stephenturner/alpinist:latest
+# docker tag alpinist stephenturner/alpinist:1.0.0
+# docker push --all-tags stephenturner/alpinist
 ```
